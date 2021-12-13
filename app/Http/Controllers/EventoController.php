@@ -21,7 +21,7 @@ class EventoController extends Controller
 
     public function listar(Request $request)
     {
-        $eventos = Evento::all();
+        $eventos = Evento::where('estado', 1);
 
 
         return DataTables::of($eventos)
@@ -61,7 +61,7 @@ class EventoController extends Controller
 
     public function antiguos(Request $request)
     {
-        $eventos = Evento::all();
+        $eventos = Evento::where('estado', 0);
 
         return DataTables::of($eventos)
             ->editColumn("imagen", function ($evento) {

@@ -98,14 +98,14 @@ class FacturaController extends Controller
             ->addColumn("acciones", function ($factura) {
 
                 if ($factura->estado == 1) {
-                    return '<a class="btn btn-danger me-2"  href="/factura/cambiar/estado/' . $factura->id . '/0"><i class="fas fa-user-slash"></i></a>' . '<a  class="btn btn-primary"  href="/factura/show?id=' . $factura->id . '"
+                    return '<a class="btn btn-danger me-2"  href="/factura/cambiar/estado/' . $factura->id . '/0"><i class="fas fa-ban"></i></a>' . '<a  class="btn btn-primary"  href="/factura/show?id=' . $factura->id . '"
                      title="show">
                     <i class="fas fa-eye fa-lg"></i>
                 </a>';
                 } else {
                     return '<a class="btn btn-success me-2" href="/factura/cambiar/estado/' . $factura->id . '/1"><i class="fas fa-user-check"></i></a>' . '<a class="btn btn-primary" href="/factura/show?id=' . $factura->id . '" 
                     title="show">
-                   <i class="fas fa-eye fa-lg"></i>
+                   <i class="fas fa-check"></i>
                </a>';
                 }
             })
